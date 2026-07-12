@@ -1,0 +1,1 @@
+from app.db.session import SessionLocal; from app.models import models; db = SessionLocal(); user = db.query(models.User).filter(models.User.email == 'admin@fleetflow.com').first(); print(user.email if user else 'Not Found'); print(user.hashed_password if user else '')

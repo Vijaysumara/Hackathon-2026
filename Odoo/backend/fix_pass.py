@@ -1,0 +1,1 @@
+from app.db.session import SessionLocal; from app.models import models; from app.core.security import get_password_hash; db = SessionLocal(); user = db.query(models.User).filter(models.User.email == 'admin@fleetflow.com').first(); user.hashed_password = get_password_hash('admin123'); db.commit(); print('Password reset to admin123 using active get_password_hash module.')
