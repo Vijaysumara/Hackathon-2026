@@ -143,14 +143,13 @@ def main():
     clean_directory(ROOT_DIR)
     subprocess.run(["git", "add", "-A"], cwd=ROOT_DIR, check=True)
 
-    # Explicitly set start time to 10:00 AM on July 12, 2026
-    start_time = datetime(2026, 7, 12, 10, 0, 0)
+    # Base start time: 10:00 AM today
+    start_time = datetime.now().replace(hour=10, minute=0, second=0, microsecond=0)
 
     print("Constructing 40 hourly commits...")
     for idx, c in enumerate(COMMITS):
         commit_time = start_time + timedelta(minutes=4 * idx)
-        # Explicitly format with +05:30 offset so Git/GitHub reads local timezone correctly
-        time_str = commit_time.strftime("%Y-%m-%dT%H:%M:%S+05:30")
+        time_str = commit_time.isoformat()
         
         # Restore paths for this commit
         for path in c["paths"]:
