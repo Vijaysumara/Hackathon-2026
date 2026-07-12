@@ -1,0 +1,28 @@
+# Node
+**/node_modules/
+**/dist/
+**/dist-ssr/
+**/*.local
+
+# Python
+**/venv/
+**/.venv/
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Logs and databases
+**/*.log
+**/*.sqlite-journal
+**/*.db-journal
+
+# Editors
+.vscode/
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
